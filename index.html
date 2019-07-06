@@ -1,1 +1,23 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>CGToolbase</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link href="styles.9c0ad738f18adc3d19ed.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script type="text/javascript" src="inline.2dc5c6269f494e110b0d.bundle.js"></script><script type="text/javascript" src="polyfills.1bbb66c3654897ec0427.bundle.js"></script><script type="text/javascript" src="main.b681924276a6a0586892.bundle.js"></script></body></html>
+<!doctype html><html lang="en">
+<head>
+</head>
+<body>
+Loading
+<script>
+
+let xhr = new XMLHttpRequest()
+xhr.open( "GET", "/dist/index.html" )
+xhr.responseType = "text/plain"
+xhr.onreadystatechange = ( e ) => {
+  if( xhr.readyState !== XMLHttpRequest.DONE ) return
+  if( xhr.status == 200 ) {
+    const res = xhr.response;
+    console.log(res)
+  } else {
+    console.error( xhr, res )
+  }
+}
+xhr.send( "" )
+</script>
+</body>
+</html>
