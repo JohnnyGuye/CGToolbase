@@ -6,13 +6,16 @@ Loading...
 <script>
 
 let xhr = new XMLHttpRequest()
-xhr.open( "GET", "/dist/index.html" )
+xhr.open( "GET", "https://johnnyguye.github.io/CGToolbase/dist/index.html" )
 xhr.responseType = "text/plain"
 xhr.onreadystatechange = ( e ) => {
   if( xhr.readyState !== XMLHttpRequest.DONE ) return
   if( xhr.status == 200 ) {
-    const res = xhr.response;
+    let res = xhr.response;
     console.log(res)
+    document.open('text/html')
+    res = res.replace('<base href="/">','<base href="https://johnnyguye.github.io/CGToolbase/dist/">')
+    document.write( res )
   } else {
     console.error( xhr, res )
   }
